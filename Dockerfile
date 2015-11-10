@@ -14,6 +14,7 @@ ENV LANG en_US.utf8
 ENV PGDATA /var/lib/postgresql/data
 
 COPY src/ .
+
 RUN chmod +x /docker-entrypoint.sh
 
 ENTRYPOINT ["/docker-entrypoint.sh"]
