@@ -6,15 +6,11 @@ RUN apk --update add \
     curl \
     "postgresql@edge>9.4" && \
     rm -rf /var/cache/apk/*
-# RUN apk update
-# RUN apk add curl
-# RUN apk add "postgresql@edge>9.4"
-# RUN rm -rf /var/cache/apk/*
 
 RUN curl -o /usr/local/bin/gosu -sSL "https://github.com/tianon/gosu/releases/download/1.6/gosu-amd64" && \
 	chmod +x /usr/local/bin/gosu
 
-ENV LANG fr_FR.utf8
+ENV LANG en_US.utf8
 ENV PGDATA /var/lib/postgresql/data
 
 COPY src/ .
