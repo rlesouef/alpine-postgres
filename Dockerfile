@@ -1,10 +1,8 @@
-FROM rlesouef/alpine-base
-MAINTAINER Richard Lesouef <rlesouef@gmail.com>
+FROM gliderlabs/alpine:3.3
 
-RUN echo "@edge http://nl.alpinelinux.org/alpine/edge/main" >> /etc/apk/repositories
 RUN apk --update add \
-    curl \
-    "postgresql@edge>9.4" && \
+    bash nano curl \
+    postgresql && \
     rm -rf /var/cache/apk/*
 
 RUN curl -o /usr/local/bin/gosu -sSL "https://github.com/tianon/gosu/releases/download/1.6/gosu-amd64" && \
