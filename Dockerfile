@@ -4,7 +4,7 @@ MAINTAINER Open Source Services [opensourceservices.fr]
 
 RUN apk --update add \
     bash nano curl \
-    postgresql postgresql-contrib && \
+    postgresql postgresql-contrib postgresql-dev && \
     rm -rf /var/cache/apk/*
 
 RUN curl -o /usr/local/bin/gosu -sSL "https://github.com/tianon/gosu/releases/download/1.9/gosu-amd64" && \
